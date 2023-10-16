@@ -6,8 +6,9 @@ from google.cloud import bigquery
 # De acuerdo a la documentación de la API, el schema para la tabla en BigQuery debe ser la siguiente.
 
 table_schema = {
-    bigquery.SchemaField('song_name', 'STRING', mode = 'REQUIRED'),
-    bigquery.SchemaField('artist_name', 'STRING', mode = 'REQUIRED'),
-    bigquery.SchemaField('played_at', 'DATETIME', mode = 'REQUIRED'),
-    bigquery.SchemaField('timestamps', 'TIMESTAMP', mode = 'REQUIRED'),
+    bigquery.SchemaField('show_id', 'STRING', mode = 'REQUIRED'),
+    bigquery.SchemaField('title', 'DATETIME', mode = 'REQUIRED'),
+    bigquery.SchemaField('release_year', 'INTEGER', mode = 'REQUIRED'),
+    bigquery.SchemaField('date_added', 'DATE', mode = 'REQUIRED'),
+    bigquery.SchemaField('duration', 'INTEGER', mode = 'REQUIRED'),
 }
