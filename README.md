@@ -21,9 +21,9 @@ Para ejecutar el proceso de ETL se necesita instalar y configurar las siguientes
 * Cuenta GCP con acceso y configuración para las API BigQuery, Google Cloud Composer y Google Cloud Storage.
 * Bucket de GCS vinculado a proyecto GCP, y Dataset y Tabla configuradas en BigQuery.
 * Instancia de Google Cloud Composer vinculada al proyecto GCP correspondiente.
-* Token de acceso para la API de Spotify que puede pedirse (aquí [https://developer.spotify.com/console/get-recently-played/])
+* Token de acceso único para la API de Spotify. La API real utiliza un sistema de autenticación 2.0, por lo que el token debe solicitarse a través de un procedimiento adicional al ETL no cubierto en este repo, pero sus instrucciones pueden revisarse (aquí [https://developer.spotify.com/console/get-recently-played/]).
 
-Una vez listo todo lo anterior, se debe reemplazar el token de la API, el nombre del proyecto, dataset y tabla de destino en el archivo (apirequest.py), y luego subir los tres archivos .py en el bucket de GCP asociado a la instancia de Google Composer.
+Una vez listo todo lo anterior, se debe reemplazar el token y usuario de la API, el nombre del proyecto, dataset y tabla de destino en el archivo (apirequest.py), y luego subir los tres archivos .py en el bucket de GCP asociado a la instancia de Google Composer.
 
 ## Ejecución del Proceso ETL
 

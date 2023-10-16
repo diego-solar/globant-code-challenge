@@ -11,21 +11,6 @@ import datetime
 user_id = ''
 token = ''
 
-# Establecemos validación de datos previo al proceso ETL
-
-def validacion_datos(df: pd.DataFrame) -> bool:
-    
-    # Check si el DF está vacío (no hay nuevos datos)
-    if df.empty:
-        print("No se descargaron canciones. Finalizando proceso.")
-        return False
-    # Check llave primaria, asumiendo que la PK es la fecha en la que se reprodujo la canción
-    if pd.Series(df['played_at']).is_unique:
-        pass
-    else:
-        raise Exception("Validación de Primary Key violada")
-    return True
-
 # Proceso de extracción de datos usando API
 # La API requiere incluir campos con fecha en unix para realizar la solicitud
 
@@ -60,16 +45,10 @@ if __name__ == '__main__':
     }
 
 # Crea DF que almacena datos extraídos
-
-    song_df = pd.DataFrame(song_dict, columns= ['song_name', 'artist_name', 'played_at', 'timestamp'])
+song_df = pd.DataFrame(song_dict, columns= ['song_name', 'artist_name', 'played_at', 'timestamp'])
 
 # Realizamos limpieza y transformación de datos eliminando duplicados y valores faltantes
 song_df.dropna(inplace=True)
 song_df.drop_duplicates(inplace=True)
 
 print(song_df)
-
-if validacion_datos(song_df):
-        print("Validación de datos aprobada, continuar con proceso ETL.")
-else:
-        print("Error en la validación de datos, se detendrá el proceso ETL.")
