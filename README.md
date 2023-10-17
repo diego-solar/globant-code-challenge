@@ -30,6 +30,6 @@ Una vez listo todo lo anterior, se debe cargar el archivo DAG en la carpeta de l
 
 El proceso entrega como resultado una tabla que filtra los datos del CSV de origen para mostrar sólamente los datos de las películas disponibles en la plataforma Netflix, devolviendo las columnas con el id, título, año de lanzamiento, fecha agregada a la plataforma y duración ordenado por el año de lanzamiento en orden descendiente. La tabla puede accederse de forma pública por el enlace https://console.cloud.google.com/bigquery?project=code-challenge-401906&p=code-challenge-401906&d=netflix_movies_shows&page=dataset, pero de igual forma incluyo un screenshot con el preview de la tabla obtenido desde mi consola
 
-![SS](https://github.com/diego-solar/globant-code-challenge/blob/main/tabla final.png?raw=true)
+![SS](https://github.com/diego-solar/globant-code-challenge/blob/main/tablafinal.png?raw=true)
 
 
